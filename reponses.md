@@ -28,14 +28,14 @@ Le schéma est disponible dans le dossier `docs/`.
 
 ### 3. Dictionnaire de données
 
-| Nom de la donnée | Type | Description |
-|---|---|---|
-| id | String / UUID | Identifiant unique du message |
-| userMessage | String | Message envoyé par l'utilisateur |
-| assistantResponse | String | Réponse générée par l'API GPT-4 |
-| createdAt | DateTime | Date et heure de création du message |
-| status | String | Statut du traitement : success, blocked ou error |
-| userId | String | Identifiant de l'utilisateur associé au message |
+| Nom de la donnée  | Type          | Description                                      |
+| ----------------- | ------------- | ------------------------------------------------ |
+| id                | String / UUID | Identifiant unique du message                    |
+| userMessage       | String        | Message envoyé par l'utilisateur                 |
+| assistantResponse | String        | Réponse générée par l'API GPT-4                  |
+| createdAt         | DateTime      | Date et heure de création du message             |
+| status            | String        | Statut du traitement : success, blocked ou error |
+| userId            | String        | Identifiant de l'utilisateur associé au message  |
 
 ---
 
@@ -53,3 +53,19 @@ Créer une nouvelle branche de fonctionnalité :
 
 ```bash
 git checkout -b feature-premium-subscription
+
+
+
+---
+
+## Captures d'écran
+
+Les captures d'écran justificatives sont disponibles dans le dossier `docs/captures/`.
+
+| Capture | Description |
+|---|---|
+| `actions-green.png` | Workflow GitHub Actions exécuté avec succès |
+| `docker-compose-running.png` | Services Docker Compose lancés en local |
+| `localhost-5173.png` | Interface frontend accessible en local |
+| `github-secret.png` | Secret `OPENAI_API_KEY` configuré dans GitHub Actions |
+```
