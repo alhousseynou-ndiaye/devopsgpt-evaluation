@@ -1,0 +1,39 @@
+services:
+  chat-api:
+    build:
+      context: ./backend
+    container_name: devopsgpt-api
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - REDIS_HOST=cache
+    depends_on:
+      - cache
+    networks:
+      - devopsgpt-network
+
+  chat-ui:
+    build:
+      context: ./frontend
+    container_name: devopsgpt-ui
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=http://localhost:3000
+    depends_on:
+      - chat-api
+    networks:
+      - devopsgpt-network
+
+  cache:
+    image: redis:7-alpine
+    container_name: devopsgpt-cache
+    ports:
+      - "6379:6379"
+    networks:
+      - devopsgpt-network
+
+networks:
+  devopsgpt-network:
+    driver: bridge
